@@ -1,0 +1,144 @@
+---
+title: "Individual assignment 1"
+author: "MichelleWang"
+date: "11/19/2021"
+output: html_document
+editor_options: 
+  markdown: 
+    wrap: 72
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Individual assignment 1
+
+rubric={correctness:1}
+
+The purpose of this assignment is to ensure that everyone does some
+self-learning and obtains practice on using docopt to create command
+line arguements in scripts, as well as creating releases on GitHub. This
+assignment will be graded for completion. You must attempt all questions
+to get the grade.
+
+### Submission instructions
+
+You must also submit a `.html` version of this homework to Canvas.
+
+### Exercise 1
+
+Create a public repository on GitHub.com called `docopt_demo`. Paste the
+url below:
+
+> <https://github.com/michelle-wms/docopt_demo>
+
+### Exercise 2
+
+**Getting documentation from a {docopt} R script**
+
+In [this
+repo](https://github.ubc.ca/MDS-2021-22/DSCI_522_dsci-workflows_students),
+in the `src` directory, you will find a script named `demo.R`. Access
+the documentation for that script from the command line by running the
+script with the `--help` option (and no other options or arguments).
+Paste the documentation that was printed out to your terminal below.
+
+> This script prints out docopt args. Usage: demo.R <arg1> --arg2=<arg2> [--arg3=<arg3>] Options: <arg> Takes any value (this is a required positional argument) --arg2=<arg2> Takes any value (this is a required option) \ [--arg3=<arg3>] Takes any value (this is an optional option)
+
+
+### Exercise 3
+
+**What does `docopt` return in R?**
+
+Run the `demo.R` script giving it appropriate arguments to see what the `docopt` function in R returns. Try setting and not setting a value for `arg3`. Describe what you observed below.
+
+    For options, you need to include the `--` in the command line call, for example:
+
+Rscript src/my_script something --anoption=something more \`\`\`
+
+> The docopt function returns the type of data input and the input
+> itself. Since arg3 is optional input, when I leave it blank, it's just
+> prints NULL for --arg3 and arg3.
+
+### Exercise 4
+
+**Break this script!**
+
+Run the `demo.R` script and find at least 3 different ways to break it
+by changing the values or order of the command line arguments at the
+command line (do not modify the script). Document how you did this
+below.
+
+> 1.  Not providing the required first input of arg before arg2
+> 2.  Using --arg=something for first argument
+> 3.  Not providing the required arg2 input
+
+### Exercise 5
+
+**Add a new optional positional argument**
+
+Copy the `demo.R` script into your `docopt_demo` repo, and then edit it
+to add a new positional argument that is optional. Also modify the
+script so that it prints out the value for this new argument in addition
+to the entire `docopt` object and `docopt` object type. Commit this
+change and push it to your `docopt_demo` repository. Paste the URL to
+this commit below:
+
+> https://github.com/michelle-wms/docopt_demo/commit/678b091ff7fac1b3f3efcd9918a9c0ee9868eadc#diff-0548e1109a8e781327f4a94d4329ad8a19d6233c79510fe6d97cf5a637cc2d2a
+
+### Exercise 6
+
+**Add a main function**
+
+Modify the `demo.R` script further so that the three print statements
+happen inside a main function. Commit this change and push it to your
+`docopt_demo` repository. Paste the URL to this commit below:
+
+> https://github.com/michelle-wms/docopt_demo/blob/cae496bdb5b03814dc4610c9a9bcbc5378d1cf1e/demo.R
+
+### Exercise 7
+
+**What does `docopt` return in Python?**
+
+In [this
+repo](https://github.ubc.ca/MDS-2021-22/DSCI_522_dsci-workflows_students),
+in the `src` directory, you will find a script named `demo.py`. Run the
+`demo.py` script giving it appropriate arguments to see what the
+`docopt` function in Python returns. Try setting and not setting a value
+for `arg3`. How does this differ from what `docopt` returns in R?
+Describe what you observed below.
+
+> Output is a dictionary instead of list. It doesn't print out the type of data too.
+
+### Exercise 8
+
+**Add a new optional positional argument**
+
+Copy the `demo.py` script into your `docopt_demo` repo, and then edit it
+to add a new positional argument that is optional. Also modify the
+script so that it prints out the value for this new argument in addition
+to the entire `docopt` object and `docopt` object type. Commit this
+change and push it to your `docopt_demo` repository. Paste the URL to
+this commit below:
+
+> https://github.com/michelle-wms/docopt_demo/blob/7a78f05dc22772b136e39eaa6021da153cd28b6d/demo.py
+
+### Exercise 9
+
+Modify the `demo.py` script further so that the three print statements
+happen inside a main function. Commit this change and push it to your
+`docopt_demo` repository. Paste the URL to this commit below:
+
+> https://github.com/michelle-wms/docopt_demo/commit/e0e6a3d52dddb2e3cf72873499b6f5788f29e820
+
+### Exercise 10
+
+Create a release in your `docopt_demo` repo called `0.1.0`. Paste the
+URL to this release below.
+
+\*Hint: See the [creating a release
+docs](https://docs.github.com/en/free-pro-team@latest/github/administering-a-repository/managing-releases-in-a-repository#creating-a-release)
+to help complete this exercise.
+
+> https://github.com/michelle-wms/docopt_demo/releases/tag/0.1.0
