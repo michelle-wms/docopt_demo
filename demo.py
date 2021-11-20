@@ -10,7 +10,7 @@ Options:
 [--arg3=<arg3>]   Takes any value (this is an optional option)
 [--arg4=<arg4>]   Takes any value (this is an optional option)
 """  
-
+ 
 from docopt import docopt
 opt = docopt(__doc__)
 print(opt)
